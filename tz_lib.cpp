@@ -1,8 +1,8 @@
-ï»¿/****************************************************************************
+/****************************************************************************
 Copyright (c) 2010-2012 cocos2d-x.org
 Copyright (c) 2008-2010 Ricardo Quesada
 Copyright (c) 2011      Zynga Inc.
-Copyright (c) 2013      ä½è€³äº‘å„¿.
+Copyright (c) 2013      ×ô¶úÔÆ¶ù.
 
 http://www.cocos2d-x.org
 
@@ -160,8 +160,7 @@ bool TouchSprite::SpriteTouch(Touch *touch) {
 		Rect r = this->rect();
 		r.origin = Point::ZERO;
 
-		if (r.containsPoint(local))
-		{
+		if (r.containsPoint(local)) {
 			return true;
 		}
 	}
@@ -173,6 +172,9 @@ Rect TouchSprite::rect() const {
 		_position.y - _contentSize.height * _anchorPoint.y,
 		_contentSize.width, _contentSize.height);
 }
+// TouchSprite
 // ------------------------------------------------------------------------
 
+
+// ------------------------------------------------------------------------
 NS_TZ_END

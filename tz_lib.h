@@ -1,8 +1,8 @@
-ï»¿/****************************************************************************
+/****************************************************************************
 Copyright (c) 2010-2012 cocos2d-x.org
 Copyright (c) 2008-2010 Ricardo Quesada
 Copyright (c) 2011      Zynga Inc.
-Copyright (c) 2013      ä½è€³äº‘å„¿.
+Copyright (c) 2013      ×ô¶úÔÆ¶ù.
 
 http://www.cocos2d-x.org
 
@@ -56,14 +56,15 @@ inline string itoa(int _int) {
 inline LabelTTF* make_ttf(const string& str) {
 	return LabelTTF::create(str,"Arial",24);
 }
-inline LabelTTF* make_ttf(const string& str,int num) {
-	return LabelTTF::create(str,"Arial",num);
+inline LabelTTF* make_ttf(const string& str,float fontSize) {
+	return LabelTTF::create(str,"Arial",fontSize);
 }
-inline LabelTTF* make_ttf(const string& str,const string& name) {
-	return LabelTTF::create(str,name,24);
+inline LabelTTF* make_ttf(const string& str,const string& fontName) {
+	return LabelTTF::create(str,fontName,24);
 }
-inline LabelTTF* make_ttf(const string& str,const string& name,int num) {
-	return LabelTTF::create(str,name,num);
+inline LabelTTF* make_ttf(
+	const string& str,const string& fontName,float fontSize) {
+	return LabelTTF::create(str,fontName,fontSize);
 }
 
 // make_sprite
@@ -81,8 +82,8 @@ inline Sprite* make_sprite(const string& path,Node* parent) {
 	parent->addChild(sprite);
 	return sprite;
 }
-inline Sprite* make_sprite(const string& path,
-						   const Point& point,Node* parent) {
+inline Sprite* make_sprite(
+	const string& path,const Point& point,Node* parent) {
 	auto sprite = make_sprite(path);
 	sprite->setPosition(point);
 	parent->addChild(sprite);
@@ -92,14 +93,34 @@ inline Sprite* make_sprite(const string& path,
 // make_item
 inline MenuItemImage* make_item(const string& path) {
 	auto item = MenuItemImage::create(
-		path + "_1" + ".png",path + "_2" + ".png");
+		path + "1.png",path + "2.png");
 	return item;
 }
-inline MenuItemImage* make_item(const string& path,
-								function<void(Object*)> call_fun) {
+inline MenuItemImage* make_item(
+	const string& path,function<void(Object*)> call_fun) {
 	auto item = MenuItemImage::create(
-		path + "_1" + ".png",path + "_2" + ".png",call_fun);
+		path + "1.png",path + "2.png",call_fun);
 	return item;
+}
+
+// animate
+Animate* make_animate(const string& name,int num,float time) {
+	auto animation = cocos2d::Animation::create();
+	for (int i = 1;i <= num;++i) {
+		auto str = name + itoa(i) +".png";
+		animation->addSpriteFrameWithFile(str.c_str());
+	}
+	animation->setDelayPerUnit(time/num);
+	animation->setRestoreOriginalFrame(true);
+	auto animate = Animate::create(animation);
+	return animate;
+}
+
+Sprite* make_animateSprite(const string& name,int num,float time) {
+	auto animate = make_animate(name,num,time);
+	auto sprite = Sprite::create((name + itoa(1) +".png").c_str());
+	sprite->runAction(RepeatForever::create(animate));
+	return sprite;
 }
 
 // 
@@ -158,7 +179,8 @@ inline TouchSprite* make_touch_sprite(const string& path) {
 	auto sprite = TouchSprite::create(path + ".png");
 	return sprite;
 }
-inline TouchSprite* make_touch_sprite(const string& path,const Point& point) {
+inline TouchSprite* make_touch_sprite(
+	const string& path,const Point& point) {
 	auto sprite = make_touch_sprite(path);
 	sprite->setPosition(point);
 	return sprite;
@@ -168,28 +190,34 @@ inline TouchSprite* make_touch_sprite(const string& path,Node* parent) {
 	parent->addChild(sprite);
 	return sprite;
 }
-inline TouchSprite* make_touch_sprite(const string& path,const Point& point,Node* parent) {
+inline TouchSprite* make_touch_sprite(
+	const string& path,const Point& point,Node* parent) {
 	auto sprite = make_touch_sprite(path);
 	sprite->setPosition(point);
 	parent->addChild(sprite);
 	return sprite;
 }
-inline TouchSprite* make_touch_sprite(const string& path,const function<void()>& call_fun) {
+inline TouchSprite* make_touch_sprite(
+	const string& path,const function<void()>& call_fun) {
 	auto sprite = TouchSprite::create(path + ".png");
 	sprite->setCallBack(call_fun);
 	return sprite;
 }
-inline TouchSprite* make_touch_sprite(const string& path,const Point& point,const function<void()>& call_fun) {
+inline TouchSprite* make_touch_sprite(
+	const string& path,const Point& point,const function<void()>& call_fun) {
 	auto sprite = make_touch_sprite(path,call_fun);
 	sprite->setPosition(point);
 	return sprite;
 }
-inline TouchSprite* make_touch_sprite(const string& path,Node* parent,const function<void()>& call_fun) {
+inline TouchSprite* make_touch_sprite(
+	const string& path,Node* parent,const function<void()>& call_fun) {
 	auto sprite = make_touch_sprite(path,call_fun);
 	parent->addChild(sprite);
 	return sprite;
 }
-inline TouchSprite* make_touch_sprite(const string& path,const Point& point,Node* parent,const function<void()>& call_fun) {
+inline TouchSprite* make_touch_sprite(
+	const string& path,const Point& point,
+	Node* parent,const function<void()>& call_fun) {
 	auto sprite = make_touch_sprite(path,call_fun);
 	sprite->setPosition(point);
 	parent->addChild(sprite);
