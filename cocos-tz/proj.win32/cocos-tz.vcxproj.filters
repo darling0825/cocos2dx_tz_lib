@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="win32">
+      <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\cocos-tz">
+      <UniqueIdentifier>{93d95350-847b-4cd9-917e-b9dafabb2eda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\cocos-tz\json">
+      <UniqueIdentifier>{13f09bd7-138e-4e07-92ac-03c26db0481d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\test">
+      <UniqueIdentifier>{6074bb15-4c1a-4587-9c85-1e10582cc80c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\cocos-tz\gui">
+      <UniqueIdentifier>{6a5df62d-404b-4e7f-bb53-905cba5cd707}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\cocos-tz\touch-sprite">
+      <UniqueIdentifier>{c536dddb-6885-483d-9022-fb797789e9dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\cocos-tz\algorithm">
+      <UniqueIdentifier>{48ee5ef0-58e6-4cb6-95d7-1be8061a6f2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\cocos-tz\function-inl">
+      <UniqueIdentifier>{12446b84-d050-4745-82db-ae696f53cbad}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\cocos-tz\json\JsonFileManagement.cpp">
+      <Filter>Classes\cocos-tz\json</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\test\test.cpp">
+      <Filter>Classes\test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\cocos-tz\gui\MyTableView.cpp">
+      <Filter>Classes\cocos-tz\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\cocos-tz\touch-sprite\TouchSprite.cpp">
+      <Filter>Classes\cocos-tz\touch-sprite</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocos-tz\json\JsonFileManagement.h">
+      <Filter>Classes\cocos-tz\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\test\test.h">
+      <Filter>Classes\test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocos-tz\json\JsonFileManagement-inl.h">
+      <Filter>Classes\cocos-tz\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocos-tz\config.h">
+      <Filter>Classes\cocos-tz</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocos-tz\algorithm\node-inl.h">
+      <Filter>Classes\cocos-tz\algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocos-tz\function-inl\make_sprite-inl.h">
+      <Filter>Classes\cocos-tz\function-inl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocos-tz\function-inl\make_ttf-inl.h">
+      <Filter>Classes\cocos-tz\function-inl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocos-tz\function-inl\string-inl.h">
+      <Filter>Classes\cocos-tz\function-inl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocos-tz\function-inl\make_item-inl.h">
+      <Filter>Classes\cocos-tz\function-inl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocos-tz\function-inl\make_animate.h">
+      <Filter>Classes\cocos-tz\function-inl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocos-tz\gui\MyTableView.h">
+      <Filter>Classes\cocos-tz\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocos-tz\touch-sprite\TouchSprite.h">
+      <Filter>Classes\cocos-tz\touch-sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocos-tz\touch-sprite\TouchSprite-inl.h">
+      <Filter>Classes\cocos-tz\touch-sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocos-tz\cocos-tz.h">
+      <Filter>Classes\cocos-tz</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="game.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
